@@ -9,18 +9,8 @@
   	</head>
 
   	<body>
-  		<nav class="navbar navbar-default">
-  			<div class="container-fluid">
-  				<a class="navbar-brand" href="<%= root_url %>">MyBlog</a>
-
-  				<ul class="nav navbar-nav navbar-right">
-	  				<li><%= link_to "Write a Story", new_post_path %></li>
-			  		<% if user_signed_in? %>
-			  			<li><%= current_user.email %></li>
-			  		<% end %>
-			  	</ul>
-  			</div>
-  		</nav>
+  		
+  		<%= render "layouts/header" %>
   		
   		<p class="notice"><%= notice %></p>
        	<p class="alert"><%= alert %></p>
