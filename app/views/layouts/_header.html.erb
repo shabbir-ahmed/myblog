@@ -3,13 +3,17 @@
 		<a class="navbar-brand" href="<%= root_url %>">MyBlog</a>
 
 		<ul class="nav navbar-nav navbar-right">
+			<li class="main-searchbar" id="main-searchbar">
+				<%= react_component('SearchContainer', {}, {prerender: true}) %>
+			</li>
+
 			<li><%= link_to "Write a Story", new_post_path, class: "button" %></li>
-  		<% if user_signed_in? %>
-  			<li><%= link_to current_user.email, current_user %></li>
-  			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-  		<% else %>
-  		<li><%= link_to "Sign in / Sign up", new_user_session_path, class: "button" %></li>
-  		<% end %>
-  	</ul>
+	  		<% if user_signed_in? %>
+	  			<li><%= link_to(avatar_for(current_user, size: 35), current_user) %></li>
+	  			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+	  		<% else %>
+	  			<li><%= link_to "Sign in / Sign up", new_user_session_path, class: "button" %></li>
+	  		<% end %>
+	  	</ul>
 	</div>
 </nav>
