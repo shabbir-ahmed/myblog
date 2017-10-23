@@ -1,5 +1,4 @@
-<%= link_to "Write Story", new_post_path %>
 
-<% @posts.each do |post| %>
-	<%= post.title %>
-<% end %>
+<div class="posts">
+	<%= render @posts %>
+</div>
